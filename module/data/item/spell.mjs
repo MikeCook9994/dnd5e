@@ -672,7 +672,7 @@ export default class SpellData extends ItemDataModel.mixin(ActivitiesTemplate, I
     // If preparation mode matches an alt spellcasting type and matching class exists, set as that class
     if ( (system.method !== "spell") && (system.method in CONFIG.DND5E.spellcasting) ) {
       const altClasses = classes.filter(i => this.parent.actor.classes[i].spellcasting.type === system.method);
-      if ( altClasses.size === 1 ) setClass(altClasses.first());
+      if ( altClasses.size >= 1 ) setClass(altClasses.first());
       return;
     }
 
